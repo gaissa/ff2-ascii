@@ -21,7 +21,7 @@ end # end of class
 
 start_time = Time.now
 
-boards = "11"
+boards = "24"
 
 response = Net::HTTP.get(URI.parse('http://futisforum2.org/index.php?action=.xml;type=rss2;boards=' + boards + ';limit=255'))
 
@@ -133,7 +133,10 @@ get '/update' do
    #@temp = Time.now.to_s  
 end
 
+title = "ff2-ascii"
+
 get '/' do
+  @title = title
   @div_content = s1
   @count = s1.length()-1
   @footer = footer  
@@ -141,5 +144,6 @@ get '/' do
 end
 
 get '/about/?' do
+  @title = title
   erb :about, :layout => :basic_layout
 end
