@@ -1,0 +1,21 @@
+<div id='update-div'></div>
+
+<script>
+
+  $.ajaxSetup ({  
+     cache: false  
+  });
+
+  $(document).ready(function() { update_time(); });
+
+  // fetch text from the server, wait 60 secs and repeat
+  function update_time() {
+    $.get("/update", 
+          function(data) {
+            console.log(data);
+			$("#update-div").html(data);
+            window.setTimeout(update_time, 60000);
+          },
+          'text');
+  }
+</script>

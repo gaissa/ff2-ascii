@@ -1,0 +1,125 @@
+body
+{
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+body, div
+{
+  position: relative;
+  -webkit-animation-name: example; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 0.02s; /* Chrome, Safari, Opera */
+  -webkit-animation-iteration-count: 20; /* Chrome, Safari, Opera */
+  -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+  animation-name: example;
+  animation-duration: 0.02s;
+  animation-iteration-count: 20;
+  animation-direction: alternate;
+}
+
+#update-div
+{
+  color: red;
+}
+
+
+#wrapper
+{
+  background-color: transparent;
+}
+
+.test
+{  
+  font-family: monospace;
+  font-size: 1.5vw;
+  margin-bottom: -5%;
+  margin-top: -5%;
+  white-space: pre;
+  background-color: transparent;
+  color: lime;  
+  font-weight: bold;  
+  clear: both;
+  float:left;  
+  opacity: 0.7;
+  filter: alpha(opacity=70); /* For IE8 and earlier */
+  -webkit-animation-name: example2; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 0.02s; /* Chrome, Safari, Opera */
+  -webkit-animation-iteration-count: 20; /* Chrome, Safari, Opera */
+  -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+  animation-name: example2;
+  animation-duration: 0.02s;
+  animation-iteration-count: 20;
+  animation-direction: alternate;
+}
+
+.button,
+.rops
+{
+  font-family: monospace;  
+  opacity: 0.7;
+  filter: alpha(opacity=70); /* For IE8 and earlier */
+  font: 110% monospace;
+  background-color: #000000;
+  border-color: lime;
+  color: lime;  
+  font-weight: bold;
+  display: inline-block;
+  border-style: solid;
+  position: relative;
+  -webkit-animation-name: example2; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 0.02s; /* Chrome, Safari, Opera */
+  -webkit-animation-iteration-count: 20; /* Chrome, Safari, Opera */
+  -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+  animation-name: example2;
+  animation-duration: 0.02s;
+  animation-iteration-count: 20;
+  animation-direction: alternate;
+}
+
+.button:focus,
+.button:active,
+.button:focus:active,
+.rops:focus,
+.rops:active,
+.rops:focus:active
+{
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example2
+{
+  0%   {background-color:lime; left:0px; top:0px;}
+  33%  {background-color:green; left:2px; top:0px;}
+  66%  {background-color:black; left:2px; top:2px;}
+  100%  {background-color:green; left:0px; top:2px;}
+}
+
+/* Standard syntax */
+@keyframes example2
+{
+  0%   {background-color:lime; left:0px; top:0px;}
+  33%  {background-color:green; left:2px; top:0px;}
+  66%  {background-color:black; left:2px; top:2px;}
+  100%  {background-color:green; left:0px; top:2px;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example
+{
+  0%   {background-color:lime; left:0px; top:0px;}
+  33%  {background-color:green; left:2px; top:0px;}
+  66%  {background-color:black; left:2px; top:2px;}
+  100%  {background-color:green; left:0px; top:2px;}
+}
+
+/* Standard syntax */
+@keyframes example
+{
+  0%   {background-color:lime; left:0px; top:0px;}
+  33%  {background-color:green; left:2px; top:0px;}
+  66%  {background-color:black; left:2px; top:2px;}
+  100%  {background-color:green; left:0px; top:2px;}
+}
