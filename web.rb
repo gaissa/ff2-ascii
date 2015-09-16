@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'tilt/erb'
+require 'bundler/setup'
 require 'cowsay'
 require 'time' 
 require 'net/http'
