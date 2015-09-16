@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/gaissa/cowsay
-  revision: b1defcea2848ef1c8f1bdde017625837a6e6fd18
+  revision: 94579959441f7958339dbe84ffdc650a88ffe918
   specs:
     cowsay (0.2.0)
 
