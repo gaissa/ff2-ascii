@@ -125,8 +125,8 @@ get '/update' do
 	  end
 	end
 
-   puts s1.to_a[0]
-   data = s1.to_a[0]
+   #puts s1.to_a[0]
+   data = s1.to_a[s1.length()-1]
    #feed = RSS::Parser.parse response
 
    #s1 = Set.new

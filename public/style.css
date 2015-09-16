@@ -1,6 +1,6 @@
 body
 {
-  background-color: #000000;
+  background-color: #000;
   overflow-x: hidden;
 }
 
@@ -19,7 +19,14 @@ body, div
 
 #update-div
 {
-  color: red;
+  font-family: monospace;
+  font-weight: bold;  
+  color: #000;
+  font-size: 3vw;
+  word-wrap: break-word;
+  text-align: justify;
+  background-color: #999;
+  
 }
 
 
