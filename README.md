@@ -12,9 +12,8 @@ You should run the below commands to make sure that you have the correct ruby ge
 		bundle install
 		
 If facing a problem: fix/remove Gemfile.lock and run one of the following commands
-
-after fix: ```bundle install```<br>
-after removal: ```bundle init```
+           	bundle install
+		bundle init
     
 
 To run this application locally
