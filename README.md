@@ -17,7 +17,7 @@ after fix: ```bundle install```<br>
 after removal: ```bundle init```
     
 
-To run this application locally, cd into the sinatra-example directory that you cloned and run
+To run this application locally
 
 		ruby ./web.ru
 
