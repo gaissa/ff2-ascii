@@ -9,13 +9,7 @@ The [demo](https://ff2-ascii.herokuapp.com/) is currently fetching the latest pa
 You should run the below commands to make sure that you have the correct ruby gems installed
 
 		bundle update
-		bundle install
-		
-If facing a problem: fix/remove Gemfile.lock and run one of the following commands
-
-		bundle update
-		bundle init
-    
+		bundle install  
 
 To run this application locally
 
