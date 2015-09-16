@@ -12,7 +12,8 @@ You should run the below commands to make sure that you have the correct ruby ge
 		bundle install
 		
 If facing a problem: fix/remove Gemfile.lock and run one of the following commands
-           	bundle install
+
+		bundle update
 		bundle init
     
 
