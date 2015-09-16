@@ -5,9 +5,21 @@ and convert the messages to an ascii-art webpage through [cowsay](https://github
 
 The [demo](https://ff2-ascii.herokuapp.com/) is currently fetching the latest page by a keyword 'rops' from [FutisForum2](http://futisforum2.org/index.php?board=24.0) "Liiga"-board.
 
-## Installation
+## Running this application locally
+You should run the below commands to make sure that you have the correct ruby gems installed
 
-TODO: Describe the installation process
+		bundle update
+		bundle install
+		
+If facing a problem: fix/remove Gemfile.lock and run one of the following commands
+
+after fix: ```bundle install```<br>
+after removal: ```bundle init```
+    
+
+To run this application locally, cd into the sinatra-example directory that you cloned and run
+
+		ruby ./web.ru
 
 ## Usage
 
