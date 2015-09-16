@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/gaissa/cowsay
-  revision: 94579959441f7958339dbe84ffdc650a88ffe918
+  revision: 31df8f97741aa0c8d0d23dcc15ebdec96dc1d508
   specs:
     cowsay (0.2.0)
 
@@ -25,7 +25,7 @@ GEM
     tilt (2.0.1)
 
 PLATFORMS
-  x64-mingw32
+  x86-mingw32
 
 DEPENDENCIES
   cowsay!
