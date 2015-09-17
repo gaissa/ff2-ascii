@@ -125,7 +125,7 @@ get '/update' do
 
 		document.css('div.post').each_with_index do |person, index|	
 			
-			s2.add(person.text)	
+			s2.add(person.text + "  |||  ")	
 			puts person.text		
 			#puts person.inner_text	  
 			#puts index
@@ -139,8 +139,8 @@ get '/update' do
 	  end
 	end
 
-   data = s2.to_a[s2.length()-1]
-
+    data = s2
+	
 end
 
 title = "ff2-ascii"
@@ -155,5 +155,6 @@ end
 
 get '/match/?' do
   @title = title
+  @ajax = "test"
   erb :nextmatch, :layout => :basic_layout
 end

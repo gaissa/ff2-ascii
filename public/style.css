@@ -3,7 +3,6 @@ body
   background-color: #000;
   overflow-x: hidden;
 }
-
 body, div
 {
   position: relative;
@@ -19,14 +18,11 @@ body, div
 
 #update-div
 {
-  font-family: monospace;
-  font-weight: bold;  
+  font-family: monospace;  
   color: #000;
   font-size: 3vw;
   word-wrap: break-word;
-  text-align: justify;
-  background-color: #999;
-  
+  background-color: #eee;  
 }
 
 
@@ -34,6 +30,7 @@ body, div
 {
   background-color: transparent;
 }
+
 
 .test
 {  
@@ -59,6 +56,7 @@ body, div
   animation-direction: alternate;
 }
 
+
 .button,
 .rops
 {
@@ -82,7 +80,6 @@ body, div
   animation-iteration-count: 20;
   animation-direction: alternate;
 }
-
 .button:focus,
 .button:active,
 .button:focus:active,
@@ -95,6 +92,7 @@ body, div
   box-shadow: none;
 }
 
+
 /* Chrome, Safari, Opera */
 @-webkit-keyframes example2
 {
@@ -103,7 +101,6 @@ body, div
   66%  {background-color:black; left:2px; top:2px;}
   100%  {background-color:green; left:0px; top:2px;}
 }
-
 /* Standard syntax */
 @keyframes example2
 {
@@ -112,7 +109,6 @@ body, div
   66%  {background-color:black; left:2px; top:2px;}
   100%  {background-color:green; left:0px; top:2px;}
 }
-
 /* Chrome, Safari, Opera */
 @-webkit-keyframes example
 {
@@ -121,7 +117,6 @@ body, div
   66%  {background-color:black; left:2px; top:2px;}
   100%  {background-color:green; left:0px; top:2px;}
 }
-
 /* Standard syntax */
 @keyframes example
 {

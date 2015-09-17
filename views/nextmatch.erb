@@ -1,21 +1,24 @@
-<div id='update-div'></div>
-
 <script>
 
-  $.ajaxSetup ({  
-     cache: false  
+  $.ajaxSetup ({
+     cache: false
   });
 
   $(document).ready(function() { update_time(); });
 
   // fetch text from the server, wait 60 secs and repeat
-  function update_time() {
-    $.get("/update", 
-          function(data) {
-            console.log(data);
-			$("#update-div").html(data);
+  function update_time()
+  {
+    $.get("/update",
+          function(data)
+		  {
+            //console.log(data);
+            data = data.split("|||");
+            for (var i = data.length-2; i >= 0; i--)
+            {
+                $("body").append("<div id='update-div'><strong>" + "#" + i + " - </strong>" + data[i] + "</div><br>");
+            }
             window.setTimeout(update_time, 60000);
-          },
-          'text');
+          });
   }
 </script>
