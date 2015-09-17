@@ -56,6 +56,12 @@ body, div
   animation-direction: alternate;
 }
 
+#test2
+{  
+  color: #666;  
+  
+}
+
 
 .button,
 .rops

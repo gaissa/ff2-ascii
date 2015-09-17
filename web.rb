@@ -106,7 +106,7 @@ get '/update' do
 		document = Oga.parse_html(body)
 		
 		document.css('div.post div.quote').each_with_index do |quote, index|
-		  quote.replace('"' + quote.text.strip + '" - ')
+		  quote.replace(' <div id="test2"><br> "' + quote.text.strip + '"</div><br>')
 		end
 		
 		document.css('div.post div.quoteheader').each_with_index do |quote, index|
