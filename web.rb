@@ -126,7 +126,7 @@ get '/update' do
 		document.css('div.post').each_with_index do |person, index|	
 			
 			s2.add(person.text + "  |||  ")	
-			puts person.text		
+			#puts person.text		
 			#puts person.inner_text	  
 			#puts index
 			puts '-' * 40
