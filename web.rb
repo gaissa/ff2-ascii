@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'sinatra'
 require 'tilt/erb'
 require 'bundler/setup'
@@ -35,8 +37,13 @@ feed.items.each do |item|
   if item.title.include? "RoPS"
 
     body = Net::HTTP.get(URI.parse(item.link)).to_s.gsub!('<br />', ' ').strip
+	
+	# Funny encoding hack...
+	body.force_encoding('iso-8859-1')		
+	body = body.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8')		
+	body.to_s.gsub!('', '€')
 
-	document = Oga.parse_html(body.unpack("C*").pack("U*"))
+	document = Oga.parse_html(body)
 	
 	document.css('div.post div.quote').each_with_index do |quote, index|
 	  quote.replace('"' + quote.text.strip + '" - ')
@@ -83,7 +90,7 @@ get '/update' do
    
    feed = RSS::Parser.parse response
 
-	s1 = Set.new
+	s2 = Set.new
 
 	feed.items.each do |item|
 
@@ -91,10 +98,12 @@ get '/update' do
 
 		body = Net::HTTP.get(URI.parse(item.link)).to_s.gsub!('<br />', ' ').strip
 		
-		# ISO 88519-1 ====> UTF-8!!!
-		puts body
+		# Funny encoding hack...
+		body.force_encoding('iso-8859-1')		
+		body = body.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8')		
+		body.to_s.gsub!('', '€')
 
-		document = Oga.parse_html(body.unpack("C*").pack("U*"))
+		document = Oga.parse_html(body)
 		
 		document.css('div.post div.quote').each_with_index do |quote, index|
 		  quote.replace('"' + quote.text.strip + '" - ')
@@ -116,7 +125,8 @@ get '/update' do
 
 		document.css('div.post').each_with_index do |person, index|	
 			
-			s1.add(person.text)		
+			s2.add(person.text)	
+			puts person.text		
 			#puts person.inner_text	  
 			#puts index
 			puts '-' * 40
@@ -129,12 +139,8 @@ get '/update' do
 	  end
 	end
 
-   #puts s1.to_a[0]
-   data = s1.to_a[s1.length()-1]
-   #feed = RSS::Parser.parse response
+   data = s2.to_a[s2.length()-1]
 
-   #s1 = Set.new
-   #@temp = Time.now.to_s  
 end
 
 title = "ff2-ascii"
