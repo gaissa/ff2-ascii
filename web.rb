@@ -153,7 +153,7 @@ get '/' do
   erb :index, :layout => :basic_layout
 end
 
-get '/about/?' do
+get '/match/?' do
   @title = title
-  erb :about, :layout => :basic_layout
+  erb :nextmatch, :layout => :basic_layout
 end
