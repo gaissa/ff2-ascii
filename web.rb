@@ -155,6 +155,6 @@ end
 
 get '/match/?' do
   @title = title
-  @ajax = "test"
+  #@ajax = "test"
   erb :nextmatch, :layout => :basic_layout
 end
