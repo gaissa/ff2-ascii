@@ -94,7 +94,7 @@ get '/update' do
 
 	feed.items.each do |item|
 
-	  if item.title.include? "HIFK"
+	  if item.title.include? "RoPS"
 
 		body = Net::HTTP.get(URI.parse(item.link)).to_s.gsub!('<br />', ' ').strip
 		
