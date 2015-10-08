@@ -84,7 +84,7 @@ elapsed_time = end_time.to_ms - start_time.to_ms
 footer = "generated in " + (elapsed_time/1000.000).to_s + " seconds"
 
 get '/update' do
-   boards = "11"
+   boards = "1"
 
    response = Net::HTTP.get(URI.parse('http://futisforum2.org/index.php?action=.xml;type=rss2;boards=' + boards + ';limit=255'))
    
@@ -94,7 +94,7 @@ get '/update' do
 
 	feed.items.each do |item|
 
-	  if item.title.include? "RoPS"
+	  if item.title.include? "Suomi"
 
 		body = Net::HTTP.get(URI.parse(item.link)).to_s.gsub!('<br />', ' ').strip
 		
