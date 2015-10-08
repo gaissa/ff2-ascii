@@ -24,7 +24,7 @@ end # end of class
 
 start_time = Time.now
 
-boards = "24"
+boards = "1"
 
 response = Net::HTTP.get(URI.parse('http://futisforum2.org/index.php?action=.xml;type=rss2;boards=' + boards + ';limit=255'))
 
@@ -34,7 +34,7 @@ s1 = Set.new
 
 feed.items.each do |item|
 
-  if item.title.include? "RoPS"
+  if item.title.include? "Suomi"
 
     body = Net::HTTP.get(URI.parse(item.link)).to_s.gsub!('<br />', ' ').strip
 	
