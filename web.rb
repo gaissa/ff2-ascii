@@ -69,7 +69,7 @@ class Forum
                         s1.add(person.text)
                     end
 
-                    puts '-' * 40
+                    #puts '-' * 40
                 end
 
                 break
@@ -107,6 +107,6 @@ end
 # TODO
 get '/match/?' do
     @title = title
-    #@ajax = "test"
+	@temp= "temp"   
     erb :nextmatch, :layout => :basic_layout
 end
