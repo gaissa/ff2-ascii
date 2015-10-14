@@ -99,7 +99,7 @@ end
 # TODO
 get '/' do
     @title = title
-    @div_content = f.data("24", "HJK", false)
+    @div_content = f.data("24", "RoPS", false)
     @count = @div_content.length()-1
     #@footer = footer
     erb :index, :layout => :basic_layout
