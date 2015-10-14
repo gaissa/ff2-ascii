@@ -24,7 +24,7 @@ end # end of class
 
 start_time = Time.now
 
-boards = "1"
+boards = "24"
 
 response = Net::HTTP.get(URI.parse('http://futisforum2.org/index.php?action=.xml;type=rss2;boards=' + boards + ';limit=255'))
 
@@ -34,7 +34,7 @@ s1 = Set.new
 
 feed.items.each do |item|
 
-  if item.title.include? "Suomi"
+  if item.title.include? "RoPS"
 
     body = Net::HTTP.get(URI.parse(item.link)).to_s.gsub!('<br />', ' ').strip
 	
@@ -84,7 +84,7 @@ elapsed_time = end_time.to_ms - start_time.to_ms
 footer = "generated in " + (elapsed_time/1000.000).to_s + " seconds"
 
 get '/update' do
-   boards = "1"
+   boards = "11"
 
    response = Net::HTTP.get(URI.parse('http://futisforum2.org/index.php?action=.xml;type=rss2;boards=' + boards + ';limit=255'))
    
@@ -94,7 +94,7 @@ get '/update' do
 
 	feed.items.each do |item|
 
-	  if item.title.include? "Suomi"
+	  if item.title.include? "RoPS"
 
 		body = Net::HTTP.get(URI.parse(item.link)).to_s.gsub!('<br />', ' ').strip
 		
