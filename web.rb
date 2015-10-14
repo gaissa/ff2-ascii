@@ -107,6 +107,6 @@ end
 # TODO
 get '/match/?' do
     @title = title
-	@temp= "temp"   
+    @temp= "temp"
     erb :nextmatch, :layout => :basic_layout
 end
