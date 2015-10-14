@@ -4,7 +4,7 @@ function urlify(text)
 
     return text.replace(urlRegex, function(url)
     {
-        return '<a href="' + url + '">' + url + '</a>';
+        return '<a href="' + url + '">' + "URL" + '</a>';
     })
     // or alternatively
     // return text.replace(urlRegex, '<a href="$1">$1</a>')
