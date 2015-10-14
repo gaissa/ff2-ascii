@@ -53,7 +53,9 @@ class Forum
                 end
 
                 document.css('div.post a').each do |link|
-                    link.replace(link.text)
+				    #puts link.attributes[0]
+					#puts link.text
+                    link.replace(link.attributes[0].to_s)					
                 end
 
                 document.css('div.post ul').each do |l|
