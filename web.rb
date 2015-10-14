@@ -11,6 +11,7 @@ require 'set'
 require 'oga'
 
 
+# TODO
 class Forum
 
     # The constructor.
@@ -83,16 +84,18 @@ class Forum
 end # end of class
 
 
-# Create a new Box.
+# TODO
 f = Forum.new
 
 ##############################################################################
 title = "ff2-ascii"
 
+# TODO
 get '/update' do
     data = f.data("11", "RoPS", true)
 end
 
+# TODO
 get '/' do
     @title = title
     @div_content = f.data("24", "RoPS", false)
@@ -101,6 +104,7 @@ get '/' do
     erb :index, :layout => :basic_layout
 end
 
+# TODO
 get '/match/?' do
     @title = title
     #@ajax = "test"
