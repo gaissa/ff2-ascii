@@ -1,30 +1,31 @@
 <script>
 
-  $.ajaxSetup ({
-     cache: false
-  });
+$.ajaxSetup ({
+    cache: false
+});
 
-  $(document).ready(function() { update_time(); });
+$(document).ready(function()
+{
+    update_time();
+});
 
-  // fetch text from the server, wait 90 secs and repeat
-  function update_time()
-  {
+// fetch text from the server, wait 90 secs and repeat
+function update_time()
+{
     //var t = "<%= @temp %>";
     //console.log(t);
 
-    $.get("/update",
+    $.get("/update", function(data)
+    {
+        $("#wrapper").empty();
+        data = data.split("|||");
 
-          function(data)
-          {
-            $("body").empty();
-            //console.log(data);
-            data = data.split("|||");
+        for (var i = data.length-2; i >= 0; i--)
+        {
+            $("#wrapper").append("<div id='update-div'><strong>" + "#" + i + " </strong>" + urlify(data[i]) + "</div><br>");
+        }
+        window.setTimeout(update_time, 90000);
+    });
+}
 
-            for (var i = data.length-2; i >= 0; i--)
-            {
-                $("body").append("<div id='update-div'><strong>" + "#" + i + " </strong>" + data[i] + "</div><br>");
-            }
-            window.setTimeout(update_time, 90000);
-          });
-  }
 </script>

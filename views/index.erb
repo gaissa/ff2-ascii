@@ -1,11 +1,10 @@
 <!-- <button type='submit' class='btn btn-primary'>button</button> -->
-<div id="wrapper">
+
 <% @count.downto(0) do |i| %>
 
 <div class="test">
 
 <div id="x<%=i.to_s%>">
-
 <%= Cowsay.say(@div_content.to_a[i]) %>
 </div>
 
@@ -13,4 +12,3 @@
 
 <% end %>
 
-</div>

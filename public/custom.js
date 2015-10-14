@@ -1,3 +1,15 @@
+function urlify(text)
+{
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+
+    return text.replace(urlRegex, function(url)
+    {
+        return '<a href="' + url + '">' + url + '</a>';
+    })
+    // or alternatively
+    // return text.replace(urlRegex, '<a href="$1">$1</a>')
+}
+
 function teamify(bg, fg, team)
 {
     $('body').css('background-color', bg);
@@ -30,26 +42,27 @@ function test(button)
 
 function resize_ascii()
 {
-	var temp = $(".test").length;
-	
-	for (var i = 0; i < temp; i++)
-	{		
-		var center = $("#x" + i).width()/2;
-		
-		var screenWidth = $(window).width()/2;
-		
-		var width = screenWidth - center;	
-		
-		$("#x" + i).css("margin-left", width);
-	}
+    var temp = $(".test").length;
+
+    for (var i = 0; i < temp; i++)
+    {
+        var center = $("#x" + i).width()/2;
+
+        var screenWidth = $(window).width()/2;
+
+        var width = screenWidth - center;
+
+        $("#x" + i).css("margin-left", width);
+    }
 }
 
 $(document).ready(function()
-{	
-	resize_ascii();
+{
+    resize_ascii();
+    $('#wrapper').html(urlify($('#wrapper').html()));
 });
 
-$( window ).resize(function()
+$(window).resize(function()
 {
    resize_ascii();
 });
